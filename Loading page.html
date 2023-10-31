@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* CSS styles for the loading screen */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            display: flex;
+            align-items: left;
+            justify-content: left;
+            z-index: 9999; /* Ensure it's above other content */
+        }
+
+        .loading-text {
+            font-size: 17px;
+        }
+        .header{s
+    float: left;
+  
+  }
+    </style>
+</head>
+<body>
+    <div class="header">
+ <div class="loading-text">Loading...</div>
+</div>
+    <div id="loading-screen">
+        
+    </div>
+
+    <!-- Your website content goes here -->
+    <div id="content">
+        <!-- Content of your website -->
+    </div>
+
+    <script>
+        // Wait for the page to load
+        document.addEventListener("DOMContentLoaded", function () {
+            // Hide the loading screen after a brief delay (e.g., 3 seconds)
+            setTimeout(function () {
+                document.getElementById("loading-screen").style.display = "none";
+            }, 1000); // 3000 milliseconds = 3 seconds
+
+            // You can add more complex redirection logic here
+            // For simplicity, this example redirects to a specific URL after the delay
+            setTimeout(function () {
+                window.location.href = "coinvest.html"; // Change to your website URL
+            }, 5000);
+        });
+    </script>
+</body>
+</html>

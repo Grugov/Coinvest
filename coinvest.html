@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .header {
+    background-color: white;
+    text-align: left;
+    height: 70px; /* Increase the header height to 100px */
+    width: 100%;
+    position: relative;
+    box-shadow: 10px 5px 20px -10px ;  
+   /* padding-left: 20px;     Adjust the left padding */
+    /*padding-right: 20px;    Adjust the right padding */
+  }
+
+  .header::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px; /* Adjust the height of the gradient line as needed */
+    background: linear-gradient(to right, white, transparent); /* Gradient background */
+    }
+
+  .header-image {
+    float: left;
+  }
+
+  .body {
+    text-align: left;
+    font-size: px;
+    font-family: "Arial Black", sans-serif;
+    padding-left:400px;
+    padding-right: 0px;
+  }
+
+  .btn-go {
+    background-color: darkgreen;
+    color: white;
+    width: 52%; /* Make the textboxes the same width as their container */
+    height: 53px; /* Increase the height of the textboxes */
+    font-size: 16px; /* Adjust the font size as needed */
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border-width: 1px;
+font-weight: bold;
+  }
+
+  .password-reset, .account-setup {
+    color: black;
+    font-family: "Calibri", Arial, sans-serif;
+  }
+
+  .btn-reset, .btn-register {
+    color: green;
+     font-family: "Calibri", Arial, sans-serif;
+    font-weight: bold;
+  }
+
+  /* Increase the height and width of the textboxes and left-align text */
+  input[type="text"],
+  input[type="password"] {
+    width: 50%; /* Make the textboxes the same width as their container */
+    height: 55px; /* Increase the height of the textboxes */
+    font-size: 16px; /* Adjust the font size as needed */
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border-width: 1px;
+    text-align: left; /* Left-align text in textboxes */
+    padding-left: 10px; /* Add padding for left-aligned text */
+  }
+
+  .Welcome {
+font-size: 50px;
+ font-family: "Calibri", Arial, sans-serif;
+    font-weight: bold;
+  }
+
+  .Sign {
+    font-size: 18px;
+    font-family: "Calibri", Arial, sans-serif;
+    font-weight: bold;
+  }
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent grey overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    display: none; /* Initially hidden */
+}
+
+/* CSS for the loading circle */
+.loading-circle {
+    border: 4px solid #f3f3f3; /* Light grey border */
+    border-top: 4px solid green; /* Blue border for the loading circle */
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    animation: spin 2s linear infinite; /* Rotate the circle */
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the circle */
+}
+
+
+
+
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <img src="download.png" alt="Your image" class="header-image" />
+</div>
+
+<div class="body">
+  <h1 class="Welcome">Welcome Back!</h1>
+  <h4 class= "Sign">Sign in with your username and password.</h4>
+  
+  <form id="login-form">
+    <input type="text" id="username" name="username" placeholder="Username" required> <br/>
+    <input type="password" id="password" name="password" placeholder="Password" required> <br/>
+    <button type="submit" class="btn-go"> Let's go </button>
+</form>
+
+  
+  <p>
+    <span class="password-reset">Forgot your Password?</span> <span class="btn-reset"> Reset it here </span> <br/>
+    <span class="account-setup">Is your account not set up yet?</span> <span class="btn-register"> Register here </span>
+  </p>
+</div>
+
+<!-- Add the overlay and loading circle elements -->
+<div class="overlay" id="loading-overlay">
+  <div class="loading-circle"></div>
+</div>
+
+<!-- JavaScript to handle the loading and redirection -->
+<script>
+  document.getElementById("login-form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent the form from submitting immediately
+
+    // Display the loading overlay
+    document.getElementById("loading-overlay").style.display = "block";
+
+    // Set a timeout to simulate a 5-second loading process
+    setTimeout(function () {
+      // Redirect to the next page (change the URL to your desired destination)
+      window.location.href = "crashing page.html"; // Change to your desired URL
+    }, 5000); // 5000 milliseconds = 5 seconds
+  });
+</script>
+</body>
+</html>
